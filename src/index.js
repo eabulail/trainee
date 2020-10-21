@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from './container/Login/loginpage'
-import "./index.css";
-import Index from "./container/food/index";
-import Mainpage from "./container/mainpage/Mainpage";
-import NavBar from "./shared/components/NavBar";
 import "./style.scss";
+import LoginPage from './containers/login-page/container'
+import AdminFoodPage from "./containers/admin-food-page/container";
+import AdminOrderPage from "./containers/admin-order-page/container";
+import HomePage from './containers/home-page/container'
+import NavBar from "./shared/components/NavBar";
 
 class Navigation extends Component {
   constructor() {
@@ -18,13 +18,12 @@ class Navigation extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <NavBar />
-        </div>
+        {/* <NavBar /> */}
         <Switch>
-          <Route exact path="/Mainpage" component={Mainpage} />
-          <Route exact path="/Login" component={Login} />
-          <Route exact path="/App" component={Index} />
+          <Route exact path="/Login" component={LoginPage} />
+          <Route exact path="/admin/order-page" component={AdminOrderPage} />
+          <Route exact path="/admin/food-page" component={AdminFoodPage} />
+          <Route path="/" component={HomePage} />
         </Switch>
       </Router>
     );

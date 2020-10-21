@@ -1,4 +1,4 @@
-@import "./shared/utils/style-utils.scss";
+@import "./shared/utils/style-variable.scss";
 .mainnav {
   overflow: hidden;
   background-color: $darkgray;
@@ -245,6 +245,10 @@
     border: none;
     cursor: pointer;
     width: 100%;
+
+    &[disabled] {
+      background-color: silver;
+    }
   }
 }
 ///// mobile app
@@ -317,5 +321,13 @@
     display: flex;
     flex-direction: row;
     max-width: 100%;
+  }
+}
+
+.home-page {
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
